@@ -1,3 +1,8 @@
+# set the working directory for relative paths
+setwd(dirname(sys.frame(tail(grep('source',sys.calls()),n=1))$ofile))
+# read the config file
+source("../config.R")
+
 if(!require(igraph)){
   iinstall.packages('igraph')
   library(igraph)
